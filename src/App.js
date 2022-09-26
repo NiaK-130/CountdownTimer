@@ -15,6 +15,33 @@ const startTimer = () => {
   interval = setInterval(() => {
     const now = new Date().getTime();
 
+    const distance = countDownDate - now;
+
+    const days = Math.floor(distance/(24 * 60 * 60 * 1000)
+    );
+    const hours = Math.floor(
+      (distance % (24 * 60 * 60 * 1000))/ (60 * 60 * 1000)
+      );
+    const minutes = Math.floor(
+      (distance % (60 * 60 * 1000)) / (60 * 60 * 1000)
+      );
+    const seconds = Math.floor(
+      (distance % (60 * 1000)) / (1000)
+        );
+
+    //this interval should run till distance is greater than 0 else stop
+
+    if (distance<0){
+      //stop
+      clearInterval(interval.current);
+    }else{
+      //update Timer
+      setTimerDays(days);
+      setTimerHours(hours);
+      setTimerMinutes(minutes);
+      setTimerSeconds(seconds);
+    }
+
   })
 }
 
