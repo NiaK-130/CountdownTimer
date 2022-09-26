@@ -6,6 +6,19 @@ function App() {
   const [timerHours, setTimerHours] = useState();
   const [timerMinutes, setTimerMinutes] = useState();
   const [timerSeconds, setTimerSeconds] = useState();
+
+let interval;
+
+const startTimer = () => {
+  const countDownDate = new Date("Sept 30, 2022").getTime();
+
+  interval = setInterval(() => {
+    const now = new Date().getTime();
+
+  })
+}
+
+
   return (
     <div className="App">
       <Clock timerDays = {timerDays} timerHours = {timerHours}
