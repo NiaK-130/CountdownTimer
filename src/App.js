@@ -1,6 +1,6 @@
 import './App.css';
 import Clock from './components/Clock'
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 function App() {
   const [timerDays, setTimerDays] = useState();
   const [timerHours, setTimerHours] = useState();
@@ -42,8 +42,12 @@ const startTimer = () => {
       setTimerSeconds(seconds);
     }
 
-  })
-}
+  });
+};
+
+useEffect(() => {
+  startTimer();
+})
 
 
   return (
